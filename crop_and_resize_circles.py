@@ -193,9 +193,9 @@ def main(argv):
                     
                     # Create new file name if more than one circle is detected
                     if circle_count == 1:
-                        new_file_name = os.path.dirname(os.path.join(root, file_name))[-5:] + "_" + "large" + ext
+                        new_file_name = name_only + "_" + "large" + ext
                     else:
-                        new_file_name = os.path.dirname(os.path.join(root, file_name))[-5:] + "_" + str(circle_count) + "_" + "large" + ext
+                        new_file_name = name_only + "_" + str(circle_count) + "_" + "large" + ext
                     
                     # Create destination path
                     rel_path = os.path.relpath(root, src_folder)
@@ -220,9 +220,9 @@ def main(argv):
                         src_circle_cropped_resized = cv2.resize(src_circle_cropped, (res, res))
                         # Create new file name if more than one circle is detected
                         if circle_count == 1:
-                            new_file_name = os.path.dirname(os.path.join(root, file_name))[-5:] + "_" + str(res) + "x" + str(res) + ext
+                            new_file_name = name_only + "_" + str(res) + "x" + str(res) + ext
                         else:
-                            new_file_name = os.path.dirname(os.path.join(root, file_name))[-5:] + "_" + str(circle_count) + "_" + str(res) + "x" + str(res) + ext
+                            new_file_name = name_only + "_" + str(circle_count) + "_" + str(res) + "x" + str(res) + ext
                         
                         dest_path = os.path.join(dest_folder, rel_path, new_file_name)
 
